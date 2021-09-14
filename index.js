@@ -5,7 +5,7 @@ const { fifaData } = require('./fifa.js')
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Practice accessing data by console.log-ing the following pieces of data note, you may want to filter the data first 😉*/
 const finals2014 = fifaData.filter(function(item){
-    return item.Year === 2014;
+    return item.Year === 2014 && item.Stage === "Final";
 });
 console.log(finals2014);
 //(a) Home Team name for 2014 world cup final
@@ -45,7 +45,7 @@ Use the higher-order function called getYears to do the following:
 
 function getYears(array,cb) {
     const years = cb(array).map(function(items){
-        return items.year;
+        return items.Year;
     })
     return years;
 }
